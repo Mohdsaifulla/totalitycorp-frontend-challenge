@@ -12,7 +12,7 @@ const Header = () => {
   const { productData, favoriteData } = useSelector(
     (state: StateProps) => state.next
   );
-  console.log(productData, favoriteData);
+
   return (
     <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
       <div className="h-full w-full mx-auto inline-flex items-center justify-between gap-1 mdl:gap-3 px-4">
