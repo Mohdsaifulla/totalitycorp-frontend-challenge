@@ -1,4 +1,4 @@
-Amazon Clone E-Commerce Project
+Amazon Clone E-Commerce Project 
 Overview
 This project is an Amazon e-commerce site clone, developed to provide a high-quality shopping experience for users. It leverages several technologies to ensure efficient code structure and optimal performance. Key technologies used in this project include Next.js, TypeScript, Tailwind CSS, Redux Toolkit, Next Auth, and Stripe for payment processing.
 
