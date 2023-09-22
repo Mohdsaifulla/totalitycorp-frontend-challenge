@@ -27,7 +27,7 @@ interface cartProductProps {
 const CartProduct = ({ item }: cartProductProps) => {
   const dispatch = useDispatch();
   return (
-    <div className="bg-gray-100 rounded-lg flex items-center gap-4">
+    <div className="bg-gray-100 rounded-lg flex items-center gap-4 flex-col md:flex-row">
       <Image
         className="object-cover"
         width={150}
@@ -40,11 +40,14 @@ const CartProduct = ({ item }: cartProductProps) => {
           <p className="text-lg font-semibold text-amazon_blue">{item.title}</p>
           <p className="text-sm text-gray-600">{item.description}</p>
           <p className="text-sm text-gray-600">
-            Unit Price{" "}
-            <span className="font-semibold text-amazon_blue">
+            Unit Price
+            <span className="font-semibold text-amazon_blue p-1">
               <FormattedPrice amount={item.price} />
             </span>
           </p>
+          <div className="text-lg font-semibold text-amazon_blue">
+            <FormattedPrice amount={item.price * item.quantity} />
+          </div>
           <div className="flex items-center gap-6">
             <div className="flex items-center mt-1 justify-between border border-gray-300 px-4 py-1 rounded-full w-28 shadow-lg shadow-gray-300 mb-2">
               <span
@@ -100,9 +103,9 @@ const CartProduct = ({ item }: cartProductProps) => {
             </div>
           </div>
         </div>
-        <div className="text-lg font-semibold text-amazon_blue">
+        {/* <div className="text-lg font-semibold text-amazon_blue">
           <FormattedPrice amount={item.price * item.quantity} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

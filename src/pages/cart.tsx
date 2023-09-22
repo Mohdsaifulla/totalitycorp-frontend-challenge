@@ -10,7 +10,7 @@ const CartPage = () => {
   const { productData } = useSelector((state: StateProps) => state.next);
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-6 grid grid-cols-5 gap-10 m-2">
+    <div className="max-w-screen-2xl mx-auto px-6 flex flex-col md:flex-row gap-10 mt-2 mb-2">
       {productData.length > 0 ? (
         <>
           <div className="bg-white col-span-4 p-4 rounded-lg ">
@@ -20,7 +20,7 @@ const CartPage = () => {
               </p>
               <p className="text-lg font-semibold text-amazon_blue">Subtitle</p>
             </div>
-            <div className="pt-2 flex flex-col gap-2">
+            <div className="pt-2 flex flex-col gap-2 ">
               {productData.map((item: StoreProduct) => (
                 <div key={item._id}>
                   <CartProduct item={item} />
