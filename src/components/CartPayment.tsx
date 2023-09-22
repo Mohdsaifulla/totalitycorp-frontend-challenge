@@ -3,8 +3,10 @@ import FormattedPrice from "./FormattedPrice";
 import { useDispatch, useSelector } from "react-redux";
 import { StateProps, StoreProduct } from "../../type";
 import { useState, useEffect } from "react";
+
+
 const CartPayment = () => {
-  const { productData } = useSelector((state: StateProps) => state.next);
+  const { productData,userInfo } = useSelector((state: StateProps) => state.next);
   const [totalAmount, setTotalAmout] = useState(0);
   useEffect(() => {
     let amt = 0;
@@ -31,7 +33,18 @@ const CartPayment = () => {
           <FormattedPrice amount={totalAmount} />
         </span>
       </p>
-      <div className="flex flex-col items-center">
+     {
+      userInfo?
+      (
+        <div className="flex flex-col items-center">
+        <button className="w-full h-10 text-sm font-semibold bg-amazon_blue bg-opacity-50 text-white rounded-lg hover:bg-amazon_yellow hover:text-black">
+          Proceed to buy
+        </button>
+      </div>
+      ):
+
+      (
+        <div className="flex flex-col items-center">
         <button className="w-full h-10 text-sm font-semibold bg-amazon_blue bg-opacity-50 text-white rounded-lg cursor-not-allowed">
           Proceed to buy
         </button>
@@ -39,6 +52,8 @@ const CartPayment = () => {
           Please login to continue
         </p>
       </div>
+      )
+     }
     </div>
   );
 };
